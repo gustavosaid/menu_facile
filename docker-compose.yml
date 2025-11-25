@@ -27,7 +27,7 @@ services:
       - /app/node_modules
   postgres:
     container_name: "banco"
-    image: postgres
+    image: postgres:17
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
