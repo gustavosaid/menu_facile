@@ -3,7 +3,7 @@
     "target": "ESNext",                        // Compilação para o ECMAScript mais recente
     "module": "CommonJS",                      // Usar o sistema de módulos CommonJS
     "moduleResolution": "Node",                // Usar resolução de módulos do Node.js
-    "ignoreDeprecations": "6.0",               // Ignorar deprecações menores
+    // "ignoreDeprecations": "6.0",               // Ignorar deprecações menores
     "esModuleInterop": true,                   // Habilitar interoperabilidade com módulos ES
     "strict": true,                            // Habilitar todas as verificações estritas de tipo
     "skipLibCheck": true,                      // Ignorar checagem de tipos em bibliotecas
