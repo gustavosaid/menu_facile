@@ -1,0 +1,48 @@
+#version: '3.5'
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    depends_on:
+      - postgres
+    networks:
+      - private_network
+      - public_network
+    ports:
+      - "3333:3333"
+    restart: always
+    volumes:
+      - ./backend/app/uploads:/app/app/uploads
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    networks:
+      - public_network
+    ports:
+      - "2222:2221"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+  postgres:
+    container_name: "banco"
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: banco
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - private_network
+
+networks:
+  private_network:
+    driver: bridge
+  public_network:
+    driver: bridge
+  
+

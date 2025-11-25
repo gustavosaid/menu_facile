@@ -1,0 +1,22 @@
+npx prisma migrate dev
+npm run dev
+
+
+
+/**************/
+
+npm install @prisma/client   
+> npm install prisma --save-dev
+>> npx prisma
+rm -rf node_modules package-lock.json
+>> npm install
+>>
+npx prisma generate
+C:\Pi_Final> npm install ts-node@latest typescript@latest
+   
+i_Final> npx ts-node src/server.ts
+   
+
+DOCKER
+Para subir os containers -> docker-compose up -dev
+pronto

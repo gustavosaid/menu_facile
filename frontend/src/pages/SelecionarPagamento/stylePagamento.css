@@ -1,0 +1,145 @@
+.payment-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Added responsive padding using clamp for fluid scaling */
+  padding: clamp(1rem, 4vw, 3rem) clamp(1rem, 5vw, 2rem);
+}
+
+.payment-wrapper {
+  width: 100%;
+  /* Made max-width responsive for different screen sizes */
+  max-width: clamp(20rem, 90vw, 28rem);
+  display: flex;
+  flex-direction: column;
+  /* Responsive gap using clamp */
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.payment-header {
+  /* Responsive font size using clamp */
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  letter-spacing: 0.025em;
+  /* Added margin for better spacing */
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  /* Responsive gap between buttons */
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.payment-button {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /* Remove sublinhado do Link */
+  background-color: #10b981;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%; /* Para preencher horizontalmente o container */
+  text-align: center; /* Centraliza o texto caso não use flex */
+}
+
+.payment-button:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+.payment-button:active {
+  transform: translateY(1px);
+}
+
+/* Added media queries for specific breakpoints */
+/* Tablet styles */
+@media (min-width: 768px) {
+  .payment-container {
+    padding: 3rem 2rem;
+  }
+
+  .payment-wrapper {
+    max-width: 32rem;
+  }
+
+  .payment-header {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .payment-options {
+    gap: 2rem;
+  }
+
+  .payment-button {
+    height: 4rem;
+    font-size: 1.375rem;
+    border-radius: 1rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .payment-container {
+    padding: 4rem 2rem;
+  }
+
+  .payment-wrapper {
+    max-width: 36rem;
+  }
+
+  .payment-header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .payment-options {
+    gap: 2.5rem;
+  }
+
+  .payment-button {
+    height: 4.5rem;
+    font-size: 1.5rem;
+    border-radius: 1.125rem;
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1440px) {
+  .payment-wrapper {
+    max-width: 40rem;
+  }
+
+  .payment-button {
+    height: 5rem;
+    font-size: 1.625rem;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .payment-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .payment-header {
+    font-size: 1.125rem;
+  }
+
+  .payment-button {
+    height: 3.25rem;
+    font-size: 1rem;
+  }
+}

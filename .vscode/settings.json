@@ -1,0 +1,5 @@
+{
+    "totvsLanguageServer.welcomePage": false,
+    "totvsLanguageServer.editor.linter.includes": "D:\\Totvs\\includes;D:\\Totvs\\includes",
+    "prisma.pinToPrisma6": true
+}

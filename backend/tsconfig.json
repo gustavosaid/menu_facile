@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                        // Compilação para o ECMAScript mais recente
+    "module": "CommonJS",                      // Usar o sistema de módulos CommonJS
+    "moduleResolution": "Node",                // Usar resolução de módulos do Node.js
+    "ignoreDeprecations": "6.0",               // Ignorar deprecações menores
+    "esModuleInterop": true,                   // Habilitar interoperabilidade com módulos ES
+    "strict": true,                            // Habilitar todas as verificações estritas de tipo
+    "skipLibCheck": true,                      // Ignorar checagem de tipos em bibliotecas
+    "forceConsistentCasingInFileNames": true,  // Forçar consistência de maiúsculas/minúsculas nos nomes de arquivos
+    "outDir": "./dist",                        // Diretório de saída dos arquivos compilados
+    "rootDir": "./src"                         // Diretório raiz dos arquivos fontes
+  },
+  "include": ["src/**/*.ts"],                   // Incluir todos os arquivos .ts dentro de "src"
+  "exclude": ["node_modules"]                   // Excluir a pasta node_modules
+}

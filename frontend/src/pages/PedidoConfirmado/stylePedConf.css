@@ -1,0 +1,191 @@
+/* Container principal */
+.confirmation-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff, #f0f4f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 5vw, 2.5rem);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Wrapper do conteúdo */
+.confirmation-wrapper {
+  width: 100%;
+  max-width: clamp(20rem, 90vw, 32rem);
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 2rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* Ilustração do pedido */
+.food-illustration {
+  width: clamp(180px, 50vw, 320px);
+  height: clamp(180px, 50vw, 320px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: clamp(0.5rem, 2vw, 1.5rem);
+  background: #f1f5f9;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+/* Imagem interna */
+.food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Título do pedido confirmado */
+.confirmation-title {
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Mensagem adicional */
+.confirmation-message {
+  font-size: clamp(0.95rem, 3vw, 1.125rem);
+  color: #4a5568;
+  margin: 0;
+  line-height: 1.6;
+  max-width: clamp(280px, 80vw, 450px);
+  padding: 0 1rem;
+}
+
+/* Tempo de espera / info extra */
+.wait-time {
+  font-size: clamp(0.95rem, 3vw, 1.125rem);
+  color: #718096;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Botão de ação (ex: voltar para home) */
+.confirmation-button {
+  margin-top: clamp(1rem, 3vw, 2rem);
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  font-weight: 600;
+  color: #ffffff;
+  background: #00b894;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.confirmation-button:hover {
+  background: #019875;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.4);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .confirmation-wrapper {
+    max-width: 36rem;
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+
+  .food-illustration {
+    width: 350px;
+    height: 350px;
+  }
+
+  .confirmation-title {
+    font-size: 2.5rem;
+  }
+
+  .confirmation-message {
+    font-size: 1.25rem;
+    max-width: 500px;
+  }
+
+  .wait-time {
+    font-size: 1.25rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .confirmation-wrapper {
+    max-width: 40rem;
+    gap: 3rem;
+  }
+
+  .food-illustration {
+    width: 400px;
+    height: 400px;
+  }
+
+  .confirmation-title {
+    font-size: 3rem;
+  }
+
+  .confirmation-message {
+    font-size: 1.375rem;
+    max-width: 550px;
+  }
+
+  .wait-time {
+    font-size: 1.375rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .confirmation-wrapper {
+    max-width: 44rem;
+  }
+
+  .food-illustration {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .confirmation-wrapper {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .food-illustration {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 0.5rem;
+  }
+
+  .confirmation-title {
+    font-size: 1.5rem;
+  }
+
+  .confirmation-message {
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+  }
+
+  .wait-time {
+    font-size: 0.875rem;
+  }
+
+  .confirmation-button {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.2rem;
+  }
+}

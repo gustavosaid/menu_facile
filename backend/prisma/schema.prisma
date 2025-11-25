@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****************************************************    Pi final TABELAS FEITAS        ************************************/
+
+model Product {
+  id_Produto                 Int      @id @default(autoincrement()) @unique //PK auto incrementada
+  descricao                  String   @db.VarChar(255)
+  preco                      Int
+  id_categoria               Int
+  ingredientes               String   @db.VarChar(1000)
+  foto                       String?   @db.VarChar(500)
+  Category  Category        @relation(fields: [id_categoria], references: [id_Categoria], onDelete: NoAction, onUpdate: NoAction)
+  Itens_Orders Itens_Orders[]
+
+  @@map("produtos")
+}
+
+model Category{
+  id_Categoria               Int      @id @default(autoincrement()) @unique //PK auto incrementada
+  descricao                  String   @db.VarChar(255)
+  Product Product[]          //Uma categoria pode ter muitos produtos
+
+  @@map("categoria")
+}
+
+model Status {
+  id_Status            Int @id @default(autoincrement())
+  descricao            String   @db.VarChar(255)
+  Order Order[]
+
+  @@map("status")
+}
+
+model Order{
+  id                         Int      @id @default(autoincrement()) @unique //PK auto incrementada
+  mesa                       Int  
+  fechado                    Boolean
+  status                     Int
+  date                       DateTime @default(now())
+  Status Status              @relation(fields: [status],references: [id_Status]) //Amarando com a tabela status
+  Itens_Orders Itens_Orders[]
+
+  @@map("pedidos")
+}
+
+
+model Itens_Orders{
+  id_item                    Int      @id @default(autoincrement()) @unique //PK auto incrementada
+  seq                        String   @db.VarChar(8)
+  quantidade                 Int
+  observacao                 String   @db.VarChar(255)
+  precoUnit                  Int 
+  produto                    Int      //Se relaciona como Product
+  id_Pedido                  Int      //Se relaciona com Order
+  Order Order                @relation(fields: [id_Pedido],references: [id]) //Amarrando com a tabela order
+  Product Product            @relation(fields: [produto],references: [id_Produto]) //Amarrando com a tabela products
+
+  @@map("itens_Pedidos")
+}
+
+model User {
+  id         String    @id @default(uuid())
+  name       String
+  email      String
+  password   String    // Aqui vai o hash, não a senha real
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("users")
+}
+
+// para rodar migrate NPX PRISMA MIGRATE DEV
